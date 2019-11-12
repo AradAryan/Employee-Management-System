@@ -1,4 +1,12 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Text;
+using System.Windows.Forms;
+
 
 namespace MyApplication
 {
@@ -17,10 +25,11 @@ namespace MyApplication
             passwordTextBox.Text =
                 passwordTextBox.Text.Replace(" ", string.Empty);
 
-            if(string.IsNullOrWhiteSpace(usernameTextBox.Text) ||
-                string.IsNullOrWhiteSpace(passwordTextBox.Text))
+            if (string.IsNullOrWhiteSpace(usernameTextBox
+                .Text) || string.IsNullOrWhiteSpace(passwordTextBox.Text))
             {
-                System.Windows.Forms.MessageBox.Show("Username And Password is Required");
+                System.Windows.Forms.MessageBox
+                    .Show("Username And Password is Required");
 
                 if (usernameTextBox.Text == string.Empty)
                 {
@@ -48,7 +57,6 @@ namespace MyApplication
                 {
                     System.Windows.Forms.MessageBox
                         .Show("Wrong Username And/Or Password");
-
                     usernameTextBox.Focus();
 
                     return;
@@ -59,7 +67,6 @@ namespace MyApplication
                 {
                     System.Windows.Forms.MessageBox
                         .Show("Wrong Username And/Or Password");
-
                     usernameTextBox.Focus();
 
                     return;
@@ -76,13 +83,9 @@ namespace MyApplication
                 }
 
                 System.Windows.Forms.MessageBox.Show("خوش آمدید");
-
                 Infrastructure.Utility.AuthenticatedUser = foundedUser;
-
                 Hide();
-
                 Infrastructure.Utility.MainForm.ResetText();
-
                 Infrastructure.Utility.MainForm.Show();
 
             }

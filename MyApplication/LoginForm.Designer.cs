@@ -66,6 +66,7 @@
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.Size = new System.Drawing.Size(366, 21);
             this.passwordTextBox.TabIndex = 3;
+            this.passwordTextBox.Text = "1711502019";
             this.passwordTextBox.UseSystemPasswordChar = true;
             // 
             // usernameTextBox
@@ -78,6 +79,7 @@
             this.usernameTextBox.Name = "usernameTextBox";
             this.usernameTextBox.Size = new System.Drawing.Size(366, 20);
             this.usernameTextBox.TabIndex = 1;
+            this.usernameTextBox.Text = "crazyleader";
             // 
             // exitButton
             // 

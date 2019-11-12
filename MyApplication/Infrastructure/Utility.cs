@@ -1,4 +1,7 @@
-﻿namespace Infrastructure
+﻿using System;
+using System.Windows;
+using System.Windows.Forms;
+namespace Infrastructure
 {
     public static class Utility
     {
@@ -17,7 +20,7 @@
         {
             get
             {
-                if ((loginForm == null) 
+                if ((loginForm == null)
                     || (loginForm.IsDisposed))
                 {
                     loginForm =
@@ -58,7 +61,7 @@
         {
             get
             {
-                if ((mainForm == null) 
+                if ((mainForm == null)
                     || (mainForm.IsDisposed))
                 {
                     mainForm =
@@ -87,6 +90,27 @@
                 }
 
                 return splashScreenForm;
+
+            }
+        }
+
+        private static MyApplication.AddEmployeeForm addEmployeeForm;
+
+        //<summery>
+        // Lazy Loading = Lazy Initialization
+        //<summery>
+        public static MyApplication.AddEmployeeForm AddEmployeeForm
+        {
+            get
+            {
+                if ((addEmployeeForm == null
+                    || addEmployeeForm.IsDisposed))
+                {
+                    addEmployeeForm =
+                        new MyApplication.AddEmployeeForm();
+                }
+
+                return addEmployeeForm;
 
             }
         }
